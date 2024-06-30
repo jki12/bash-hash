@@ -4,7 +4,7 @@
 
 md5, sha1 외 다른 해시값을 구하고 싶으면 19번째 라인에 해시 종류를 추가하면 됩니다.
 
-`openssl openssl dgst -list`로 지원하는 hash 확인 가능합니다.
+`openssl openssl dgst -list`로 지원하는 해시 종류 확인이 가능합니다.
 
 ``` sh
 ...
@@ -18,7 +18,7 @@ do
 ```
 
 
-# usage
+# USAGE
 
 ### 현재 디렉토리에 있는 파일 리스트입니다.
 <img width="1470" alt="Screenshot 2024-07-01 at 12 31 47 AM" src="https://github.com/jki12/bash-hash/assets/129145278/17d18e3d-51d6-428e-85a2-58907845e8f0">
