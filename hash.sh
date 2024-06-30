@@ -10,6 +10,8 @@ cat << "EOF" # heredoc
 
 EOF
 
+max_len=32;
+
 echo "+----------------------------------+"
 file_list=(`ls`)
 len=${#file_list[@]} # file list length.
@@ -24,9 +26,9 @@ do
 	file_name=$(echo "${file_list[i]}" | cut -d '.' -f1)
 	for hash in ${hash_list[@]}
 	do
-	hash_file_name="${file_name}.${hash}"
-	printf "| %-*s |\n" 32 "created ${hash_file_name}"
-	echo `openssl ${hash} ${file_list[i]}` | cut -d ' ' -f2 > ${hash_file_name}
+		hash_file_name="${file_name}.${hash}"
+		printf "| %-*s |\n" ${max_len} "created ${hash_file_name}"
+		echo `openssl ${hash} ${file_list[i]}` | cut -d ' ' -f2 > ${hash_file_name}
 	done
 done
 echo "+----------------------------------+"
