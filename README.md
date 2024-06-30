@@ -24,5 +24,7 @@ do
 <img width="1470" alt="Screenshot 2024-07-01 at 12 31 47 AM" src="https://github.com/jki12/bash-hash/assets/129145278/17d18e3d-51d6-428e-85a2-58907845e8f0">
 
 
-### sh hash.sh 파일로 실행하면 터미널에 다음과 같이 출력됩니다.
+### sh hash.sh 파일로 실행하면 터미널에 다음과 같이 출력 후 파일이 생성됩니다.
 <img width="1470" alt="Screenshot 2024-07-01 at 12 28 58 AM" src="https://github.com/jki12/bash-hash/assets/129145278/b99d73e0-76ff-41ab-a7ce-278c07bf7b89">
+
+<img width="1470" alt="Screenshot 2024-07-01 at 1 05 52 AM" src="https://github.com/jki12/bash-hash/assets/129145278/f546d107-dd40-452e-82c5-76e798e23bf4">
