@@ -1,4 +1,4 @@
-# README.MD
+# README.md
 
 `hash.sh` 파일이 실행된 디렉토리 내의 모든 파일에 대해 해시 값을 계산하고, 각각의 파일에 대해 `{file}.{hash_type}` 형식으로 해시 값을 저장합니다.
 
@@ -18,7 +18,7 @@ do
 ```
 
 
-# USAGE
+# Usage
 
 ### 현재 디렉토리에 있는 파일 리스트입니다.
 <img width="1470" alt="Screenshot 2024-07-01 at 12 31 47 AM" src="https://github.com/jki12/bash-hash/assets/129145278/17d18e3d-51d6-428e-85a2-58907845e8f0">
