@@ -12,7 +12,7 @@ file_list=(`ls`)
 len=${#file_list[@]} # file list length.
 
 hash_list=('md5' 'sha1') -> hash_list=('md5' 'sha1' 'sha256')
-for i in `seq -w 0 $((len - 1))` # script 파일 제외, 범위를 [0, len - 1)로 하기 위해.
+for i in `seq -w 0 $((len - 1))` # script 파일 제외, 범위를 [0, len)로 하기 위해.
 do
 ...
 ```
