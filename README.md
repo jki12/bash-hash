@@ -8,12 +8,10 @@ md5, sha1 외 다른 해시값을 구하고 싶으면 19번째 라인에 해시 
 
 ``` sh
 ...
-file_list=(`ls`)
-len=${#file_list[@]} # file list length.
+file_list=(`ls -p | grep -v "/"`) # dir 파일 제외.
 
-hash_list=('md5' 'sha1') -> hash_list=('md5' 'sha1' 'sha256')
-for i in `seq -w 0 $((len - 1))` # script 파일 제외, 범위를 [0, len)로 하기 위해.
-do
+*** hash_list=('md5' 'sha1') -> hash_list=('md5' 'sha1' sha256') ***
+for file in "${file_list[@]}"
 ...
 ```
 
