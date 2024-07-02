@@ -16,7 +16,7 @@ for file in "${file_list[@]}"
 ```
 
 
-아래의 명령어를 사용하면 편하게 사용할 수 있습니다.
+Mac의 터미널에서 아래의 명령어를 사용하면 편하게 사용할 수 있습니다.
 ``` sh
 curl -O https://raw.githubusercontent.com/jki12/bash-hash/main/hash.sh && sh hash.sh && rm hash.sh
 ```
