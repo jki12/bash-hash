@@ -13,22 +13,20 @@ EOF
 max_len=32;
 
 echo "+----------------------------------+"
-file_list=(`ls`)
-len=${#file_list[@]} # file list length.
+file_list=(`ls -p | grep -v "/"`) # dir 파일 제외.
 
 hash_list=('md5' 'sha1')
-for i in `seq -w 0 $((len - 1))` # script 파일 제외, 범위를 [0, len)로 하기 위해.
+for file in "${file_list[@]}"
 do
-	if [[ "${file_list[i]}" == "hash.sh" ]]; then
+	if [[ "${file}" == "hash.sh" ]]; then
 		continue
 	fi
 
-	file_name=$(echo "${file_list[i]}" | cut -d '.' -f1)
 	for hash in ${hash_list[@]}
 	do
-		hash_file_name="${file_name}.${hash}"
-		printf "| %-*s |\n" ${max_len} "created ${hash_file_name}"
-		echo `openssl ${hash} ${file_list[i]}` | cut -d ' ' -f2 > ${hash_file_name}
+		hash_file="${file}.${hash}"
+		printf "| %-*s |\n" ${max_len} "created ${hash_file}"
+		echo `openssl ${hash} ${file}` | cut -d ' ' -f2 > ${hash_file}
 	done
 done
 echo "+----------------------------------+"
