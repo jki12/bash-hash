@@ -2,16 +2,18 @@
 
 `hash.sh` 파일이 실행된 디렉토리 내의 모든 파일에 대해 해시 값을 계산하고, 각각의 파일에 대해 `{file}.{hash_type}` 형식으로 해시 값을 저장합니다.
 
-md5, sha1 외 다른 해시값을 구하고 싶으면 19번째 라인에 해시 종류를 추가하면 됩니다.
+md5, sha1 외 다른 해시값을 구하고 싶으면 13번째 라인에 해시 종류를 추가하면 됩니다.
 
 `openssl openssl dgst -list`로 지원하는 해시 종류 확인이 가능합니다.
 
 ``` sh
 ...
-file_list=(`ls -p | grep -v "/"`) # dir 파일 제외.
+EOF
 
-*** hash_list=('md5' 'sha1') -> hash_list=('md5' 'sha1' sha256') ***
-for file in "${file_list[@]}"
+** hash_list=("md5" "sha1") -> hash_list=("md5" "sha1" "sha256") **
+max_len=32;
+
+echo "+----------------------------------+"
 ...
 ```
 
