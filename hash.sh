@@ -10,21 +10,21 @@ cat << "EOF" # heredoc
 
 EOF
 
-hash_list=('md5' 'sha1')
+hash_list=("md5" "sha1")
 max_len=32;
 
 echo "+----------------------------------+"
-find . -type f ! -name '.*' -print0 |  while IFS= read -d "" file
+find . -type f ! -name ".*" -print0 |  while IFS= read -d "" file
 do
-	if [[ "${file}" == "./hash.sh" ]]; then
-		continue
-	fi
+  if [[ "${file}" == "./hash.sh" ]]; then
+    continue
+  fi
 
-	for hash in ${hash_list[@]}
-	do
-		hash_file="${file}.${hash}"
-		printf "| %-*s |\n" ${max_len} "created ${hash_file}"
-		echo `openssl ${hash} "${file}"` | cut -d ' ' -f2 > "${hash_file}"
-	done
+  for hash in ${hash_list[@]}
+  do
+    hash_file="${file}.${hash}"
+    printf "| %-*s |\n" ${max_len} "Created ${hash_file}"
+    echo `openssl ${hash} "${file}"` | cut -d ' ' -f2 > "${hash_file}"
+  done
 done
 echo "+----------------------------------+"
